@@ -20,7 +20,6 @@ Source0:	http://linuxtv.org/download/dvb/%{name}-%{version}.tar.bz2
 License:	GPL
 Group:		Video
 URL:		http://linuxtv.org/dvb/
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	libxml2-devel freetype2-devel
 BuildRequires:  png-devel
 

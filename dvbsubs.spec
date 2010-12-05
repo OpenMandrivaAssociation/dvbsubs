@@ -15,7 +15,7 @@
 Summary:	Dvbsubtitle tools	
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 6
+Release:	%mkrel 7
 Source0:	http://linuxtv.org/download/dvb/%{name}-%{version}.tar.bz2
 License:	GPL
 Group:		Video

@@ -1,0 +1,18 @@
+--- bitmap.c.orig       2004-03-04 14:31:18.000000000 +0100
++++ bitmap.c    2012-11-25 12:11:31.598234990 +0100
+@@ -1,5 +1,6 @@
+ #include <stdlib.h>
+ #include <png.h>
++#include <zlib.h>
+ 
+ #include "bitmap.h"
+ 
+@@ -41,7 +42,7 @@
+         return -1;
+     }
+ 
+-    if (setjmp(png_ptr->jmpbuf)) {
++    if (setjmp(png_jmpbuf(png_ptr))) {
+         png_destroy_write_struct(&png_ptr, &info_ptr);
+         fclose(fp);
+         return -1;

@@ -11,30 +11,32 @@
 %else
 %define release %{mdkrel}
 %endif
-
+%define debug_package %{nil}
 Summary:	Dvbsubtitle tools	
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 7
+Release: 7
 Source0:	http://linuxtv.org/download/dvb/%{name}-%{version}.tar.bz2
-License:	GPL
+Patch0:	dvbsubs-0.3-png-zlib.patch
+License:	GPLv2
 Group:		Video
 URL:		http://linuxtv.org/dvb/
-BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	libxml2-devel freetype2-devel
-BuildRequires:  png-devel
+
+BuildRequires:	libxml2-devel 
+BuildRequires:	freetype2-devel
+BuildRequires:	png-devel
 
 %description
 DVB subtitles utilities.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 #makeinstall_std
 install -d -m755 %buildroot/%{_bindir}
 install -m755 dvbsubs %buildroot/%{_bindir}/
@@ -45,17 +47,12 @@ install -m755 xml2srt %buildroot/%{_bindir}/
 install -d -m755 %buildroot/%{_mandir}/man1
 install -m755 dvbtextsubs.1 %buildroot/%{_mandir}/man1/
 
-#
-# binaries
-#
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
 %doc CHANGES COPYING README 
 %{_bindir}/*
 %{_mandir}/man1/*
+
+
 
 

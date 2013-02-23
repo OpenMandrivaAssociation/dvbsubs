@@ -15,7 +15,7 @@
 Summary:	Dvbsubtitle tools	
 Name:		%{name}
 Version:	%{version}
-Release: 7
+Release: 8
 Source0:	http://linuxtv.org/download/dvb/%{name}-%{version}.tar.bz2
 Patch0:	dvbsubs-0.3-png-zlib.patch
 License:	GPLv2
@@ -23,7 +23,7 @@ Group:		Video
 URL:		http://linuxtv.org/dvb/
 
 BuildRequires:	libxml2-devel 
-BuildRequires:	freetype2-devel
+BuildRequires:	freetype-devel
 BuildRequires:	png-devel
 
 %description

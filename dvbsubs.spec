@@ -3,7 +3,7 @@
 Summary:	Dvbsubtitle tools	
 Name:		dvbsubs
 Version:	0.3
-Release:	10
+Release:	11
 License:	GPLv2
 Group:		Video
 Url:		http://linuxtv.org/dvb/

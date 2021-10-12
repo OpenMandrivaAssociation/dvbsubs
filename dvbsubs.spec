@@ -1,9 +1,9 @@
-%define debug_package %{nil}
+%define _empty_manifest_terminate_build 0
 
 Summary:	Dvbsubtitle tools	
 Name:		dvbsubs
 Version:	0.3
-Release:	17
+Release:	18
 License:	GPLv2
 Group:		Video
 Url:		http://linuxtv.org/dvb/
@@ -22,10 +22,10 @@ DVB subtitles utilities.
 %autopatch -p1
 
 %build
-%make
+%make_build
 
 %install
-#makeinstall_std
+#make_install
 install -d -m755 %{buildroot}/%{_bindir}
 install -m755 dvbsubs %{buildroot}/%{_bindir}/
 install -m755 dvbtextsubs %{buildroot}/%{_bindir}/

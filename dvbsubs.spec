@@ -6,7 +6,7 @@ Version:	0.3
 Release:	19
 License:	GPLv2
 Group:		Video
-Url:		http://linuxtv.org/dvb/
+Url:		https://linuxtv.org/dvb/
 Source0:	http://linuxtv.org/download/dvb/%{name}-%{version}.tar.bz2
 Patch0:		dvbsubs-0.3-png-zlib.patch
 
